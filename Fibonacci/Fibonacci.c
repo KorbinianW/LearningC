@@ -1,20 +1,19 @@
 #include <stdio.h>
 
+int fib(int n);
+
+int fib(int n) {
+    if (n == 1 || n == 0) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
 int main() {
-	int length;
-	int result;
-	int firstNumber = 1;
-	int secondNumber = 1;
+	int length, result;
 	
 	printf("Enter a number: ");
 	scanf("%d", &length);
 
-	for (int i = 1; i <= length; i++) {
-		result = firstNumber + secondNumber;
-
-		firstNumber = secondNumber;
-		secondNumber = result;
-
-		printf("%d, ", result);
-	}
+	printf("%d", fib(length));
 }
